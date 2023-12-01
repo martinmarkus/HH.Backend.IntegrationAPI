@@ -1,0 +1,42 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:56842",
+      "sslPort": 44386
+    }
+  },
+  "profiles": {
+    "HH.Backend.WebAPI.DEV": {
+      "commandName": "Project",
+      "commandLineArgs": "--console-log",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5011;http://localhost:5010",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "HH.Backend.WebAPI.PROD": {
+      "commandName": "Project",
+      "commandLineArgs": "--console-log",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "HH.Backend.WebAPI.TEST": {
+      "commandName": "Project",
+      "commandLineArgs": "--console-log",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5011;http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Test"
+      }
+    }
+  }
+}
