@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "HH.Backend.WebAPI.DEV": {
+    "HH.Backend.IntegrationAPI.DEV": {
       "commandName": "Project",
       "commandLineArgs": "--console-log",
       "dotnetRunMessages": true,
@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "HH.Backend.WebAPI.PROD": {
+    "HH.Backend.IntegrationAPI.PROD": {
       "commandName": "Project",
       "commandLineArgs": "--console-log",
       "dotnetRunMessages": true,
@@ -28,7 +28,7 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    "HH.Backend.WebAPI.TEST": {
+    "HH.Backend.IntegrationAPI.TEST": {
       "commandName": "Project",
       "commandLineArgs": "--console-log",
       "dotnetRunMessages": true,

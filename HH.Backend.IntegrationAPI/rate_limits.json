@@ -1,0 +1,33 @@
+{
+  "IpRateLimiting": {
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "RealIpHeader": "Remote-IP-Address",
+    "ClientIdHeader": "X-ClientId",
+    "HttpStatusCode": 429,
+    "IpWhitelist": [ "127.0.0.1", "::1/10" ],
+    "EndpointWhitelist": [ "*:/ping*" ],
+    "GeneralRules": [
+      {
+        "Endpoint": "*:/GetNewsFeed",
+        "Period": "1m",
+        "Limit": 1000
+      },
+      {
+        "Endpoint": "*",
+        "Period": "1s",
+        "Limit": 20
+      },
+      {
+        "Endpoint": "*",
+        "Period": "15m",
+        "Limit": 1000
+      },
+      {
+        "Endpoint": "*",
+        "Period": "12h",
+        "Limit": 10000
+      }
+    ]
+  }
+}
