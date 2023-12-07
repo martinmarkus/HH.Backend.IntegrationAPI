@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HH.Backend.IntegrationAPI.Controllers
 {
-{
     [ServiceFilter(typeof(AuthorizeIntegration))]
     [IgnoreClientValidation]
     [ApiExplorerSettings(IgnoreApi = true)] // INFO: Swagger ignore
