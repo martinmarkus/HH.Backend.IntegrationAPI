@@ -23,7 +23,13 @@ namespace HH.Backend.IntegrationAPI.Request.Filters
 
         public async override Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            string integrationSecretKey = context.HttpContext.Request.Headers[SessionConstants.IntegrationSecretKey];
+            string integrationSecretKey = string.Empty;
+
+
+            if (context is not null)
+            {
+                integrationSecretKey = context?.HttpContext?.Request?.Headers[SessionConstants.IntegrationSecretKey] ?? string.Empty;
+            }
 
             if (string.IsNullOrWhiteSpace(integrationSecretKey))
             {
@@ -34,7 +40,11 @@ namespace HH.Backend.IntegrationAPI.Request.Filters
                     Message = $"External integration request authorization was challenged: missing integration secret key."
                 });
 
-                context.Result = new UnauthorizedResult();
+                if (context is not null)
+                {
+                    context.Result = new UnauthorizedResult();
+                }
+
                 return;
             }
 
@@ -48,7 +58,11 @@ namespace HH.Backend.IntegrationAPI.Request.Filters
                         $"Invalid integration secret key '{_baseOptions.IntegrationSecretKey}'"
                 });
 
-                context.Result = new UnauthorizedResult();
+                if (context is not null)
+                {
+                    context.Result = new UnauthorizedResult();
+                }
+
                 return;
             }
 
