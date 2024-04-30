@@ -1,13 +1,10 @@
-﻿using HH.Backend.Common.API.Services;
-using HH.Backend.Common.Core.Configuration;
+﻿using HH.Backend.Common.Core.Configuration;
 using HH.Backend.Common.Core.Constants;
 using HH.Backend.Common.DataAccess.DbContexts;
-using HH.Backend.Common.DomainLogic.Services;
 using HH.Backend.Common.Web.Request.Filters;
 using HH.Backend.Common.Web.WireUp;
 using HH.Backend.IntegrationAPI.Request.Filters;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace HH.Backend.IntegrationAPI
 {
@@ -21,7 +18,7 @@ namespace HH.Backend.IntegrationAPI
         {
             base.ConfigureServices(services);
 
-            services.ResolveDynamically("HH.Backend.IntegrationAPI");
+            services.RegisterDynamically("HH.Backend.IntegrationAPI");
 
             // INFO: Manual registering of custom config files
             services.AddConfiguration<HungarianZipCodeOptions>(Configuration);

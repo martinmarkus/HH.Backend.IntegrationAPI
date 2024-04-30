@@ -1,7 +1,7 @@
-﻿using HH.Backend.Common.API.Services;
+﻿using HH.Backend.Common.API.Extensions;
+using HH.Backend.Common.API.Services;
 using HH.Backend.Common.Core.DTOs.RequestDTOs;
 using HH.Backend.Common.Core.DTOs.ResponseDTOs;
-using HH.Backend.Common.DomainLogic.Extensions;
 using HH.Backend.Common.Web.Attributes;
 using HH.Backend.Common.Web.Authentication.Interfaces;
 using HH.Backend.Common.Web.Controllers;

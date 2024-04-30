@@ -1,10 +1,10 @@
-﻿using HH.Backend.Common.Core.Configuration;
+﻿using HH.Backend.Common.API.Services;
+using HH.Backend.Common.Core.Configuration;
 using HH.Backend.Common.Core.Constants;
-using HH.Backend.Common.API.Services;
+using HH.Backend.Common.Core.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
-using HH.Backend.Common.Core.Enums;
 
 namespace HH.Backend.IntegrationAPI.Request.Filters
 {
