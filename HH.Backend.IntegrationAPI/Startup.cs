@@ -25,7 +25,6 @@ namespace HH.Backend.IntegrationAPI
             services.AddConfiguration<CountryOptions>(Configuration);
 
             services.AddScoped<ValidateClient>();
-            services.AddScoped<Honeypot>();
 
             services.AddScoped<AuthorizeIntegration>();
 
@@ -37,10 +36,7 @@ namespace HH.Backend.IntegrationAPI
                 ServiceLifetime.Scoped);
         }
 
-        public override void Configure
-            (IApplicationBuilder app,
-            IServiceScopeFactory serviceScopeFactory,
-            HHDbContext dbContext)
+        public override void Configure(IApplicationBuilder app, IServiceScopeFactory serviceScopeFactory)
         {
             // INFO: A Cors policy setting must be the first
             app.UseCors(builder => builder
@@ -49,15 +45,12 @@ namespace HH.Backend.IntegrationAPI
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .WithExposedHeaders(
-                    SessionConstants.AntiforgeryCookieToken,
-                    SessionConstants.AuthToken,
+                    SessionConstants.HeaderAuthToken,
                     SessionConstants.RefreshToken)
                 .AllowCredentials()
             );
 
-            base.Configure(app,
-                serviceScopeFactory,
-                dbContext);
+            base.Configure(app, serviceScopeFactory);
         }
     }
 }
